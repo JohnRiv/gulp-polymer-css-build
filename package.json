@@ -1,0 +1,47 @@
+{
+  "name": "gulp-polymer-css-build",
+  "version": "0.0.1",
+  "description": "Gulp plugin for Polymer CSS Builder",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnriv/gulp-polymer-css-build.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "polymer-css-build",
+    "polymer",
+    "css",
+    "vulcanize",
+    "web-component-shards",
+    "web",
+    "components",
+    "webcomponents"
+  ],
+  "author": {
+    "name": "John Riviello",
+    "email": "github@riviello.net",
+    "url": "johnriviello.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnriv/gulp-polymer-css-build/issues"
+  },
+  "homepage": "https://github.com/johnriv/gulp-polymer-css-build#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "polymer-css-build": "^0.0.5",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-vulcanize": "^6.1.0",
+    "gulp-web-component-shards": "^1.2.3",
+    "mkdirp": "^0.5.0",
+    "mocha": "*",
+    "rimraf": "^2.5.4"
+  }
+}

@@ -1,0 +1,17 @@
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="x-import">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <p class="x">[X-Imported: <content></content>]</p>
+  </template>
+  <script>
+    Polymer({
+      is: 'x-import'
+    });
+  </script>
+</dom-module>
