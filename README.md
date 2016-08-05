@@ -1,4 +1,4 @@
-# gulp-polymer-css-build [![Build Status](https://travis-ci.org/johnriv/gulp-polymer-css-build.svg?branch=master)](https://travis-ci.org/johnriv/gulp-polymer-css-build)
+# gulp-polymer-css-build [![Build Status](https://travis-ci.org/JohnRiv/gulp-polymer-css-build.svg?branch=master)](https://travis-ci.org/JohnRiv/gulp-polymer-css-build)
 
 > Statically apply Polymer's CSS Mixin shim and CSS Custom Property shim (future work) with the [`Polymer CSS Builder`](https://github.com/PolymerLabs/polymer-css-build)
 
