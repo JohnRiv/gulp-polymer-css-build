@@ -1,5 +1,13 @@
 sudo: false
 language: node_js
 node_js:
-  - '6'
-  - '5'
+- '6'
+- '5'
+deploy:
+  provider: npm
+  email: npm@riviello.net
+  api_key:
+    secure: CLGrCAqcCcTDnVgqyR5F4giizaQskzTuc2VXV2c0d5CGhh1VflekcA7PYpRVS5DDUiGJ/T0nTR/EuxKIo8geiQoMnWBtIWo6IYtBTiEA0G4utIXiaCapfN9KQwYbRkhJKBSUnFaBGmEnl9THgwy6CfDEh4EuFpU6q3dXwF2lvcaEkmpfMPC7/ChkBVH362MEKCtR2Dgpt83R9inyhXMDvdGiIJ5TaKnnikVc+JK2lQteioZIIllEqiKdP6dtRWZNzSg1wVcKYhvuoan41nsL+9LAvJSyKK3D4jHoDzuCcPUVYSVAtJMin1kwRoL7k0vSnMy+ssemEHTVBNO7mdXtZCvbre/1PTzm0seKB6crlQ+uyakuj+SU4RsXVOsNasfF/1QxYWBCwPUVD8HIpN4/M/VKJNTY28pAXcN4DdZC+w9qbff3GTYs+b83tm9C826guv6wtg4wgcKJ/PWHXbdlyWSeYvJG3MAlzCUKMnu1AAt4/hcIX7pPPZ/pQnx+mFb15f19U7TTn1Cqh+tPnq3nQd/r6vOAM4pE28YcAeI7upOlsiMnB2uJjgpT5NA3Rlw7NxQK/GMAv2729hxFeBGroaCS18Z6pK9iJzeOIk9w+uQZuUghq+dqXtLo/kXvCH+LS7ZkAAUi8aLGtvhs0FuA8dwwdqAaM9Jk1DIqVL+AL4c=
+  on:
+    tags: true
+    repo: JohnRiv/gulp-polymer-css-build
