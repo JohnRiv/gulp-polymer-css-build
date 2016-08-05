@@ -13,6 +13,9 @@
   "files": [
     "index.js"
   ],
+  "engines" : {
+    "npm" : ">=3.0.0"
+  },
   "keywords": [
     "gulpplugin",
     "polymer-css-build",
