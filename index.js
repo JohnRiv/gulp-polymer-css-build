@@ -16,13 +16,11 @@ module.exports = function (opts) {
   return through.obj(function (file, enc, cb) {
 
     if (file.isNull()) {
-      cb(null, file);
-      return;
+      return cb(null, file);
     }
 
     if (file.isStream()) {
-      cb(new gutil.PluginError('gulp-polymer-css-build', 'Streaming not supported'));
-      return;
+      return cb(new gutil.PluginError('gulp-polymer-css-build', 'Streaming not supported'));
     }
 
     try {
@@ -34,8 +32,7 @@ module.exports = function (opts) {
         cb(null, file);
       });
     } catch (e) {
-      cb(new gutil.PluginError('polymer-css-build', e));
-      return;
+      return cb(new gutil.PluginError('polymer-css-build', e));
     }
 
   });
