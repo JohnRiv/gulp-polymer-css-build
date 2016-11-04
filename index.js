@@ -12,8 +12,9 @@ var polymerCssBuild = require('polymer-css-build').polymerCssBuild;
  * @param {Config} [opts] the configuration
  */
 module.exports = function (opts) {
+  const inputDocs = [];
 
-  return through.obj(function (file, enc, cb) {
+  const stream = through.obj(function (file, enc, cb) {
 
     if (file.isNull()) {
       return cb(null, file);
@@ -23,13 +24,25 @@ module.exports = function (opts) {
       return cb(new gutil.PluginError('gulp-polymer-css-build', 'Streaming not supported'));
     }
 
+    inputDocs.push({
+      url: file.path,
+      // XXX: Can we provide the buffer directly?
+      content: file.contents.toString('utf8'),
+      file: file
+    });
+
+    // All is fine, we'll push out the files later on.
+    return cb(null);
+  }, function (cb) {
     try {
-      polymerCssBuild([{
-        url: file.path,
-        content: String(file.contents)
-      }], opts).then(function(polyCssBuiltFiles) {
-        file.contents = new Buffer(polyCssBuiltFiles[0].content);
-        cb(null, file);
+      return polymerCssBuild(inputDocs, opts).then(function(polyCssBuiltFiles) {
+        polyCssBuiltFiles.forEach(function(polyCssBuiltFile, index) {
+          const file = inputDocs[index].file;
+          file.contents = new Buffer(polyCssBuiltFile.content);
+          stream.push(file);
+        });
+      }).then(function() {
+        cb(null);
       });
     } catch (e) {
       return cb(new gutil.PluginError('polymer-css-build', e));
@@ -37,4 +50,5 @@ module.exports = function (opts) {
 
   });
 
+  return stream;
 };
