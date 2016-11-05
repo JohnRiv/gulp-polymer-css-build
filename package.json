@@ -39,7 +39,7 @@
   "homepage": "https://github.com/johnriv/gulp-polymer-css-build#readme",
   "dependencies": {
     "gulp-util": "^3.0.0",
-    "polymer-css-build": "^0.0.6",
+    "polymer-css-build": "^0.0.7",
     "through2": "^2.0.0"
   },
   "devDependencies": {
