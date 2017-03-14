@@ -11,7 +11,7 @@ var polymerCssBuild = require('polymer-css-build').polymerCssBuild;
 /**
  * @param {Config} [opts] the configuration
  */
-module.exports = function (opts) {
+module.exports = function (opts = {}) {
   const inputDocs = [];
 
   const stream = through.obj(function (file, enc, cb) {
